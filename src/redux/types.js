@@ -1,0 +1,22 @@
+//user reducer types
+export const SET_AUTHENTICATED = 'SET_AUTHENTICATED'
+export const SET_UNAUTHENTICATED = 'SET_UNAUTHENTICATED'
+export const SET_USER = 'SET_USER'
+export const LOADING_USER = 'LOADING_USER'
+export const UNLOADING_USER = 'UNLOADING_USER'
+export const MARK_NOTIFICATIONS_READ = 'MARK_NOTIFICATIONS_READ'
+//UI reducer types
+export const LOADING_UI = 'LOADING_UI'
+export const SET_ERRORS = 'SET_ERRORS'
+export const STOP_LOADING_UI = 'STOP_LOADING_UI'
+export const CLEAR_ERRORS = 'CLEAR_ERRORS'
+//data reducers types
+export const LOADING_DATA = 'LOADING_DATA'
+export const SET_SCREAMS = 'SET_SCREAMS'
+export const SET_SCREAM = 'SET_SCREAM'
+export const CLEAR_SCREAM = 'CLEAR_SCREAM'
+export const ADD_SCREAM = 'ADD_SCREAM'
+export const LIKE_SCREAMS = 'LIKE_SCREAMS'
+export const UNLIKE_SCREAMS = 'UNLIKE_SCREAMS'
+export const DELETE_SCREAM = 'DELETE_SCREAM'
+export const ADD_COMMENT = 'ADD_COMMENT'
