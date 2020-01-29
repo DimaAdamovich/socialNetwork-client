@@ -40,10 +40,10 @@ const EditProfileDetails = ({editUserDetails, credentials}) => {
 
     const handleSaveEditData = () => {
         const userDetails = {
-            bio: state.bio,
-            location: state.location,
-            linkedIn: state.linkedIn,
-            gitHub: state.gitHub,
+            bio: state.bio || '',
+            location: state.location || '',
+            linkedIn: state.linkedIn || '',
+            gitHub: state.gitHub || '',
         }
         editUserDetails(userDetails)
     }

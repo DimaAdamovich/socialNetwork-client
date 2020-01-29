@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect, useState} from "react";
+import React, {Fragment, useEffect, useState, useCallback} from "react";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
 import makeStyles from "@material-ui/styles/makeStyles/makeStyles";
@@ -66,13 +66,13 @@ const DialogScream = ({screamId, loading, getScream, clearScream, scream, openDi
             window.history.pushState(null, null, newPath)
             setPath({...path, newPath: newPath})
         }
-    }, [scream])
+    }, [scream, path, screamId, userHandle])
 
-    const handleClickOpen = () => {
+    const handleClickOpen = useCallback( () => {
         setPath({...path, oldPath: window.location.pathname})
         getScream(screamId)
         setOpen(true);
-    };
+    }, [screamId, getScream, path]);
     const handleClose = () => {
         if (path.oldPath === path.newPath) path.oldPath = `/users/${userHandle}`
         setOpen(false);
@@ -81,7 +81,7 @@ const DialogScream = ({screamId, loading, getScream, clearScream, scream, openDi
     };
     useEffect(() => {
         openDialog && handleClickOpen()
-    }, [openDialog, screamId])
+    }, [openDialog, screamId, handleClickOpen])
 
     //menu
     const [anchorEl, setAnchorEl] = useState(null)
